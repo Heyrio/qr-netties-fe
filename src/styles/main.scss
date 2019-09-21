@@ -1,0 +1,500 @@
+@charset "utf-8";
+@import '~bulma/sass/utilities/initial-variables';
+@import '~bulma/sass/utilities/functions';
+@import "@/styles/variables.scss";
+//Baseline Bulma
+@import '~bulma/bulma.sass';
+@import '~buefy/dist/buefy.css';
+// bulma extensions import
+@import '~bulma-extensions/bulma-pageloader/dist/css/bulma-pageloader.sass';
+@import '~bulma-extensions/bulma-steps/dist/css/bulma-steps.sass';
+@import "~bulma-extensions/bulma-tooltip/dist/css/bulma-tooltip.sass";
+// @import "~bulma-extensions/bulma-accordion/dist/css/bulma-accordion.sass";
+// @import "~bulma-extensions/bulma-badge/dist/css/bulma-badge.sass";
+// @import "~bulma-extensions/bulma-calendar/dist/css/bulma-calendar.sass";
+// @import "~bulma-extensions/bulma-carousel/dist/css/bulma-carousel.sass";
+// @import "~bulma-extensions/bulma-checkradio/dist/css/bulma-checkradio.sass";
+// @import "~bulma-extensions/bulma-divider/dist/css/bulma-divider.sass";
+// @import "~bulma-extensions/bulma-iconpicker/dist/css/bulma-iconpicker.sass";
+// @import "~bulma-extensions/bulma-pageloader/dist/css/bulma-pageloader.sass";
+// @import "~bulma-extensions/bulma-pricingtable/dist/css/bulma-pricingtable.sass";
+// @import "~bulma-extensions/bulma-quickview/dist/css/bulma-quickview.sass";
+// @import "~bulma-extensions/bulma-ribbon/dist/css/bulma-ribbon.sass";
+// @import "~bulma-extensions/bulma-slider/dist/css/bulma-slider.sass";
+// @import "~bulma-extensions/bulma-steps/dist/css/bulma-steps.sass";
+// @import "~bulma-extensions/bulma-switch/dist/css/bulma-switch.sass";
+// @import "~bulma-extensions/bulma-tagsinput/dist/css/bulma-tagsinput.sass";
+// @import "~bulma-extensions/bulma-timeline/dist/css/bulma-timeline.sass";
+@font-face {
+    font-family: "Roboto-Regular";
+    src: url('~@/assets/fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto-Medium";
+    src: url('~@/assets/fonts/Roboto-Medium.ttf') format('truetype');
+    font-weight: medium;
+    font-style: normal;
+}
+
+$family-sans-serif: "Roboto-Regular";
+html {
+    background-color: $pale-grey-two;
+}
+
+body {
+    font-family: "Roboto-Regular" !important;
+    margin: 0px;
+    background-color: $pale-grey-two;
+}
+
+#app {
+    font-family: "Roboto-Regular", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: $dark-grey;
+    background-color: $pale-grey-two;
+}
+
+.notification {
+    background-color: $pale-grey-two;
+}
+
+hr {
+    border: 1px solid $pale-grey;
+    margin-top: 25px;
+}
+
+.header {
+    font-weight: bold;
+}
+
+.padder {
+    height: 50px;
+}
+
+.fixed-palette {
+    position: fixed;
+    background-color: rgba(255, 255, 255, .6);
+    border-radius: 4px;
+    bottom: 5px;
+    right: 5px;
+    padding: 5px;
+    z-index: 20;
+    .button {
+        margin: 5px;
+    }
+}
+
+.load-spot {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    height: calc(100vh - 50px);
+    width: calc(100vw - 50px);
+    margin-left: 0px !important;
+    margin-top: 0px !important;
+    overflow: auto;
+    background-color: $pale-grey-two;
+    overflow-x: hidden;
+}
+
+.title {
+    color: $dark-grey;
+    font-family: "Roboto-Regular";
+}
+
+.add-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    background-color: #81c926;
+    color: #fff;
+    line-height: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.menu {
+    position: fixed;
+    padding-top: 10px;
+    background-color: #ffffff;
+    height: calc(100vh - 50px);
+    width: 250px !important;
+    border-right: 2px solid $bluish-grey;
+    overflow: auto;
+    z-index: 20;
+}
+
+.menu-holder {
+    width: 250px !important;
+}
+
+.weight-tool {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.container {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+.buffer {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.menu-asterisk svg {
+    width: 8px !important;
+    margin-top: -10px;
+    margin-left: -15px;
+}
+
+.label {
+    color: $dark-grey;
+    font-family: "Roboto-Regular";
+    font-size: 15px !important;
+    text-align: left;
+    font-weight: 600;
+}
+
+.button.is-success,
+.button.is-primary {
+    background-color: $apple-green;
+}
+
+.button {
+    font-family: "Roboto-Regular";
+    font-weight: 400 !important;
+}
+
+.export-button {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+button,
+.v-switch-label {
+    font-family: "Roboto-Regular";
+}
+
+.v-switch-label {
+    font-weight: 400 !important;
+}
+
+// The commented portion has to be set within the component
+// The component is designed that way.
+.v-switch-core {
+    border-radius: 5px !important;
+}
+
+.v-switch-button {
+    border-radius: 10% !important;
+    border: solid 1px $bluish-grey;
+    background-color: $pale-grey-two;
+    width: 36px;
+    height: 36px;
+}
+
+.help {
+    font-family: "Roboto-Regular";
+    font-size: 10px;
+    font-weight: normal;
+    font-style: italic;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $bluish-grey;
+}
+
+.input,
+textarea,
+.textarea,
+.multiselect {
+    color: $bluish-grey !important;
+    font-family: "Roboto-Regular";
+    font-size: 15px;
+    border-color: $pale-grey-two;
+    border-width: 1px;
+    box-shadow: 1 2 3 3px $pale-grey-two inset;
+}
+
+.v-sidebar-menu .vsm-item.first-item.active-item>.vsm-link {
+    background-color: $sidemenu-highlight-background;
+}
+
+.input:hover,
+.input:focus,
+textarea:hover,
+textarea:focus,
+.multiselect__input:hover {
+    border-color: $apple-green !important;
+}
+
+.multiselect__tag {
+    background-color: $apple-green !important;
+    font-family: "Roboto-Regular";
+}
+
+.multiselect__option--selected.multiselect__option--highlight,
+.multiselect__option--highlight {
+    background-color: $apple-green;
+}
+
+.multiselect__option--selected {
+    color: $bluish-grey;
+}
+
+.menu-label {
+    color: $bluish-grey;
+    font-family: "Roboto-Medium";
+    font-size: 11px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.menu-list a {
+    color: $dark-grey;
+    font-family: "Roboto-Regular";
+    font-size: 15px;
+}
+
+.menu-list a.is-active,
+.menu-list a:hover {
+    color: #76A000;
+    background-color: $menu-list-highlight-background;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+.center-image {
+    display: inline-block;
+}
+
+.is-spaced {
+    padding: 1rem 2rem;
+}
+
+.center-image {
+    display: inline-block;
+}
+
+.launcher {
+    & img {
+        height: 50px;
+    }
+    & .dropdown-menu {
+        z-index: 250;
+    }
+}
+
+.card {
+    border-radius: 0.4em;
+    &.focus {
+        background-color: transparent;
+    }
+}
+
+.input[disabled],
+.textarea[disabled] {
+    border-color: #d5dade;
+}
+
+.icon {
+    vertical-align: middle;
+    &.is-large {
+        height: 3rem;
+        width: 3rem;
+    }
+    &.is-xlarge {
+        height: 5rem;
+        width: 5rem;
+    }
+    &.is-xxlarge {
+        height: 6rem;
+        width: 6rem;
+    }
+    svg {
+        width: inherit;
+        height: inherit;
+    }
+}
+
+.loadspot {
+    background-color: #f3f6f8;
+    left: 250px;
+    margin-left: 14px !important;
+    margin-top: 14px !important;
+}
+
+.burger {
+    $burgerSize: 28px;
+    height: auto;
+    &.is-large {
+        width: $burgerSize * 2;
+        span {
+            margin: auto;
+            left: 8%;
+            right: 8%;
+            width: 2rem;
+            height: 2px;
+            &:nth-child(1) {
+                top: calc(50% - (1rem / 2));
+            }
+            &:nth-child(2) {
+                top: 50%;
+            }
+            &:nth-child(3) {
+                top: calc(50% + (1rem / 2));
+            }
+        }
+    }
+    &.is-active {
+        span {
+            &:nth-child(3) {
+                top: calc(50% + (1rem / 8));
+            }
+        }
+    }
+}
+
+.profile-description {
+    min-height: 75px;
+    max-height: 75px;
+    overflow: hidden;
+}
+
+.control.has-icons-left .icon,
+.control.has-icons-right .icon {
+    pointer-events: initial;
+}
+
+.control.has-icons-right {
+    .icon.is-right svg {
+        display: none;
+    }
+    & input:focus {
+        ~.icon.is-right svg {
+            display: block;
+        }
+    }
+}
+
+.tooltip::before {
+    opacity: 1;
+    background: #363636 !important;
+}
+
+.tooltip::after {
+    padding: 0;
+    box-shadow: initial;
+    border-radius: 0;
+}
+
+.multiselect.multiselect--active {
+    z-index: 1000 !important;
+}
+
+//Adjustments for Light/Dark
+.has-text-dark * {
+    color: #363636 !important;
+}
+
+.has-text-light * {
+    color: #ecf0f1 !important;
+}
+
+.modal-card-head {
+    .modal-card-title {
+        text-overflow: ellipsis;
+        width: 229px;
+    }
+}
+
+//Stepper, make active more noticeable
+.steps .step-item.is-active.is-completed .step-marker {
+    background-color: #fff;
+    color: #2ecc71;
+    border-style: dashed !important;
+}
+
+.steps .step-item.is-active .step-marker {
+    background-color: #fff;
+    border-style: dashed !important;
+}
+
+//Nav bar Fixes for desktop
+@media screen and (max-width: $desktop - 1px) {
+    .navbar.is-fixed-top .navbar-menu,
+    .navbar.is-fixed-top-touch .navbar-menu,
+    .navbar .navbar-menu {
+        overflow: initial;
+        padding: 0;
+        box-shadow: initial;
+        overflow-y: auto;
+        background-color: white;
+    }
+    .navbar-item {
+        &.has-dropdown {
+            & .navbar-link::after {
+                display: block;
+            }
+            .navbar-dropdown {
+                display: none;
+            }
+            &.is-active {
+                .navbar-dropdown {
+                    display: block;
+                }
+            }
+        }
+    }
+    .navbar-burger {
+        height: initial;
+    }
+}
+
+//IE 11 Fixes, do not remove
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+    li.message {
+        width: 50%;
+    }
+    .columns {
+        flex-basis: 100%;
+    }
+    .launcher img {
+        height: auto;
+    }
+    .columns.is-gapless>.column {
+        padding: 0.75rem !important;
+    }
+    .logo-container img {
+        height: auto;
+        max-height: 1.75rem;
+        max-width: inherit;
+    }
+    .dropdown.is-mobile-modal .dropdown-menu {
+        width: calc(30vw - 40px);
+    }
+    .modal-content,
+    .modal-card,
+    .modal-card-body {
+        margin: 0 !important;
+        height: 100% !important;
+    }
+}
+
+// CSS specific to iOS devices
+@supports (-webkit-overflow-scrolling: touch) {
+    .modal-card {
+        max-height: calc(80vh - 80px);
+    }
+}
